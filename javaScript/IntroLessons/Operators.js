@@ -20,6 +20,8 @@ for ( let i = 1; i <= times; i ++ ) {
     startingNumber = startingNumber + interval
     console.log(startingNumber);
 }
+function  howManyTimes (startingNumber =+ interval){
+  while (numberStart < numberEnd){
 
 let number = [4, 7, 13, 99, 0, 100, 5, 1, '1'];
 
