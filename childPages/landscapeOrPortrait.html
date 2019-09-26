@@ -6,44 +6,93 @@
     <noscript><h1 style="color:red;">JavaScript needs to be enabled in Settings</h1></noscript> <!-- Checks browser settings for JavaScript -->
 
     <meta charset="utf-8">
-    <meta name="author" content="Noah Mongeon">
+    <meta name="author" content="Mark Mercer">
     <meta name="description" content="JavaScript Assignemnts, output to console"> <!-- Webpage Description to poplulate search engines like Google-->
     <meta name="keywords" content="JavaScript, Console"> <!-- Key words for searching -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>JavaScript Project</title>
+    <title>I'm Learning Javacript</title>
+
   </head>
+
   <body>
 
-    <header><h1>LandScape or Portrait</h1></header>
+    <header><h1>LandScape or Portrait Assignment</h1></header>
+
     <nav></nav>
     <aside></aside>
 
-    <label for="textfield" Width: </label>
-      <input name="textfield1" type="text" id  ="textfield">
-
-      <label for="textfield" Height: </label>
-        <input name="textfield1" type="text" id  ="textfield">
-
-
     <section>
-      <article>width is greater than height, return Landscape
-        <br><br>
-              width is less than Hieght, return  Portrait
-              <br><br>
-              width is equal to Height, return square
+      <article>
+        <!--  -->
+        <form action="x.html" method="post" onsubmit="event.preventDefault();">
+        <!-- Ensures this FORM doesn't work with PHP or other server side scripting
+        languages-->
 
+        <p>&nbsp;</p>
+        <!-- See: https://www.w3schools.com/html/html_entities.asp-->
+        <!-- Non-breaking real space, adds real space to webpage that is not
+        eliminated by browser (hard coded space)-->
 
+        <a><strong>Enter the values of width and height below ...</strong></a>
 
-    </article>
-  </section>
+        <p>
+          <label for="textfield1">Width: </label>
+          <input name="textfield1" type="text" id="textfield1">
+          <a id="validityTest1">See the Alert</a>
+        </p>
+
+        <p>
+          <label for="textfield2">Height: </label>
+          <input name="textfield2" type="text" id="textfield2">
+          <a id="validityTest2">See the Alert</a>
+        </p>
+
+        <!-- Submit Button -->
+        <br>
+        <button type="button" onclick="main()">Submit</button>
+        <br>
+        <h3>The Answer is:
+          <a>What is the answer?</a>
+        </h3>
+        <br><br><br>
+
+        <! -- Exemplar illstrating what this page does -->
+        <fieldset>
+          <legend>Case Study</legend>
+          <div>
+            <ul>
+              <li> Width is greater than Height, return Landacpe
+              <li> Width is less than Height, return Portrait
+              <li> Width is equal to Height, return Square
+            </ul>
+          </div>
+          <label>
+            <input type="checkbox" name="CheckboxGroup1" nalue="checkbox1" id="CheckboxGroup1_0">
+            Checkbox 1
+          </label>
+          <br>
+          <label>
+            <input type="checkbox" name="CheckboxGroup1" nalue="checkbox2" id="CheckboxGroup1_1">
+            Checkbox 2
+         </label>
+         <br>
+         <label>
+          <input type="checkbox" name="CheckboxGroup1" nalue="checkbox3" id="CheckboxGroup1_2">
+          Checkbox 3
+        </label>
+        <br>
+        </fieldset>
+
+      </article>
+    </section>
+
+    <br><br><br>
 
     <script src="../scripts/LandScape or Portrait.js"></script>
 
-  </body>
-
   <footer>
-    <blockquote cite="https://www.brainyquote.com/quotes/mitchell_kapor_163583">
+    <blockquote cite=>
     <!--  Date Accessed: 20180920 -->
     <p><strong>"i like ham"</strong>
     <p>&copy Noah Mongeon, powered by ham in GitHub</p>
