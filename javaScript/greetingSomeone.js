@@ -1,60 +1,42 @@
+<!DOCTYPE html>
+<html>
+<body>
 
-<script type="text/JavaScript">
-x=150;
-y=150;
-clock=document.getElementById("canvas");
-ctx=clock.getContext("2d");
+<canvas id="canvas" width="400" height="400"
+style="background-color:#333">
+</canvas>
 
-function loop()
-{
-time=new Date();
-h=time.getHours();
-m=time.getMinutes();
-s=time.getSeconds();
+<script>
+var canvas = document.getElementById("canvas");
+var ctx = canvas.getContext("2d");
+var radius = canvas.height / 2;
+ctx.translate(radius, radius);
+radius = radius * 0.90
+drawClock();
 
-ctx.beginPath();
-ctx.fillStyle="white";
-ctx.arc(x,y,140,0,Math.PI*2,true);
-ctx.fill();
-ctx.strokeStyle="red";
-ctx.lineWidth=10;
-ctx.stroke();
-drawNumber();
-
-drawPointer(360*(h/12)+(m/60)*30-90,70,"black",10);
-drawPointer(360*(m/60)+(s/60)*6-90,100,"black",10);
-drawPointer(360*(s/60)+x-90,120,"red",2);
+function drawClock() {
+  drawFace(ctx, radius);
 }
 
-function drawNumber()
-{
-for(n=0;n<12;n++)
-{
-d=-60;
-num = new Number(n+1);
-str = num.toString();
-dd = Math.PI/180*(d+n*30);
-tx = Math.cos(dd)*120+140;
-ty = Math.sin(dd)*120+160;
-ctx.font = "26px Verdana";
-ctx.fillStyle = "brown";
-ctx.fillText(str, tx, ty);
+function drawFace(ctx, radius) {
+  var grad;
+  ctx.beginPath();
+  ctx.arc(0, 0, radius, 0, 2*Math.PI);
+  ctx.fillStyle = 'white';
+  ctx.fill();
+  grad = ctx.createRadialGradient(0,0,radius*0.95, 0,0,radius*1.05);
+  grad.addColorStop(0, '#333');
+  grad.addColorStop(0.5, 'white');
+  grad.addColorStop(1, '#333');
+  ctx.strokeStyle = grad;
+  ctx.lineWidth = radius*0.1;
+  ctx.stroke();
+  ctx.beginPath();
+  ctx.arc(0, 0, radius*0.1, 0, 2*Math.PI);
+  ctx.fillStyle = '#333';
+  ctx.fill();
 }
-}
-
-function drawPointer(deg,len,color,w)
-{
-rad=(Math.PI/180*deg);
-x1=x+Math.cos(rad)*len;
-y1=y+Math.sin(rad)*len;
-
-ctx.beginPath();
-ctx.strokeStyle=color;
-ctx.lineWidth=w;
-ctx.moveTo(x,y);
-ctx.lineTo(x1,y1);
-ctx.stroke();
-}
-setInterval(loop,500);
-
 </script>
+
+</body>
+</html>
